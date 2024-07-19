@@ -5,13 +5,13 @@ import '../style.css';
 import Sidebar from '../layouts/Sidebar';
 import Profile from '../layouts/profile';
 import Excercises from '../layouts/excercises';
-import Meals from '../layouts/meal'; // Ensure this is the correct path
+import Meals from '../layouts/meal'; 
 
 const Tracker = () => {
   const [activeTab, setActiveTab] = useState('meals');
 
   const handleTabClick = (tab) => {
-    console.log(`Switching to ${tab} tab`); // Debugging statement
+    console.log(`Switching to ${tab} tab`);
     setActiveTab(tab);
   };
 
