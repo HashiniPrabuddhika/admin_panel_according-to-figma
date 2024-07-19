@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { format, startOfWeek, endOfWeek, addWeeks, subWeeks, eachDayOfInterval } from 'date-fns';
-import { SlArrowLeft,SlArrowRight } from "react-icons/sl";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { GoArrowRight } from "react-icons/go";
 import './calendar.css';
 
@@ -26,13 +26,11 @@ const Calendar = () => {
     return (
         <div className="calendar-container">
             <div className="calendar-header">
-               
                 <div className="calendar-header-content">
                     <div className="month-year left">
                         <span className="month">{format(days[0], 'MMMM')}
-                             <span className="year">{format(days[0], ' yyyy')}</span>
+                            <span className="year">{format(days[0], ' yyyy')}</span>
                         </span>
-                       
                     </div>
                     <button onClick={handlePrevWeek} className="nav-button">< SlArrowLeft /></button>
                     <div className="calendar-body">
@@ -46,15 +44,14 @@ const Calendar = () => {
                         ))}
                     </div>
                     <button onClick={handleNextWeek} className="nav-button"><SlArrowRight /></button>
-                    <span className="nav-button" style={{ color: '#121A2D' , marginLeft:'10px'}}><GoArrowRight /></span>
-
+                    <span className="nav-button" style={{ color: '#121A2D', marginLeft: '10px' }}><GoArrowRight /></span>
                     <div className="month-year right" style={{ color: '#888C96' }}>
                         <span className="month">{format(days[6], 'MMMM')}
-                        <span className="year">{format(days[6], ' yyyy')}</span>
+                            <span className="year">{format(days[6], ' yyyy')}</span>
                         </span>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
     );
 };

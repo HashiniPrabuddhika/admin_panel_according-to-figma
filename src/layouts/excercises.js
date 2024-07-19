@@ -121,7 +121,6 @@ const excercises = () => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                     <div className='heartRateRow'>
@@ -138,8 +137,6 @@ const excercises = () => {
                                     </div>
                                     <p className="heart-text">Additional Info</p>
                                 </div>
-
-
                             </div>
                         </div>
 
@@ -156,14 +153,9 @@ const excercises = () => {
                                     </div>
                                     <p className="heart-text">Add Water</p>
                                 </div>
-
-
                             </div>
                         </div>
-
                     </div>
-
-
                 </div>
             </section>
     </div>
