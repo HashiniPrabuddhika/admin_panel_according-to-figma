@@ -1,8 +1,8 @@
 import React from 'react'
-
+import Sidebar from '../layouts/Sidebar'
 const doctor = () => {
   return (
-    <div>doctor</div>
+    <div> <Sidebar></Sidebar></div>
   )
 }
 

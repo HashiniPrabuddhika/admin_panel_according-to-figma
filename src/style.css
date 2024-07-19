@@ -94,36 +94,42 @@ body {
 }
 #sidebar .side-menu {
 	width: 100%;
-	margin-top: 168px;
+	margin-top: 140px;
 }
 #sidebar .side-menu li {
-	height: 100px;
+	height: 130px;
 	background: transparent;
 	margin: 18px ;
 	padding: 4px;
 }
+#sidebar .side-menu li a.active {
+    color: var(--blue);
+    background: var(--light);
+}
+
 #sidebar .side-menu li.active {
-	background: var(--blue);
-	position: relative;
+    background: var(--blue);
+    position: relative;
 }
-#sidebar .side-menu li.active::before {
-	content: '';
-	position: absolute;
-	width: 50px;
-	height: 40px;
-	top: -100px;
-	right: 0;
-	z-index: -1;
-}
+
+#sidebar .side-menu li.active::before,
 #sidebar .side-menu li.active::after {
-	content: '';
-	position: absolute;
-	width: 50px;
-	height: 40px;
-	bottom: -40px;
-	right: 0;
-	z-index: -1;
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    right: 0;
+    z-index: -1;
 }
+
+#sidebar .side-menu li.active::before {
+    top: -100px;
+}
+
+#sidebar .side-menu li.active::after {
+    bottom: -40px;
+}
+
 #sidebar .side-menu li a {
 	height: 145px;
 	width: 88;

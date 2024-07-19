@@ -1,8 +1,9 @@
 import React from 'react'
+import Sidebar from '../layouts/Sidebar';
 
 const contact = () => {
   return (
-    <div>contact</div>
+    <div> <Sidebar></Sidebar></div>
   )
 }
 
