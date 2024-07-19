@@ -1,6 +1,12 @@
 import React from 'react'
 import CalendarHeatmapComponent from '../layouts/CalendarHeatmap';
+import { PiEyeClosedFill } from "react-icons/pi";
+import { GoArrowRight } from "react-icons/go";
+import Calendar from './Calendar';
 import './meal.css';
+import FoodTabs from './FoodTabs';
+import FoodCard from './FoodCard';
+import { foodCards } from './foodData';
 const meal = () => {
     return (
         <div>
@@ -88,10 +94,76 @@ const meal = () => {
                         <img src="img/animal.png" alt="Profile Picture" className="picture" />
                     </div>
                     </div>
-                    
+                    <Calendar></Calendar>
 
+                    <div className='melsTypeRow'>
+                        <div className='melsType'>
+                            <p className="activity" style={{ color: '#121A2D', marginBottom:'10px' }}>Breakfast</p>
+                            <div className='melsTypeContainer'>
+                                <div className='melsTypeInfo'>
+                                    <div className="melsType-details">
+                                    <span className='textRate3'>Eaten</span>
+                                        <span className='textRate'>395kcal</span>
+                                    </div>
+                                    <div className="circle-melsType-container">
+                                    <PiEyeClosedFill />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='melsType'>
+                            <p className="activity" style={{ color: '#121A2D' }}>Lunch</p>
+                            <div className='melsTypeContainer'>
+                                <div className='melsTypeInfo'>
+                                    <div className="melsType-details">
+                                    <span className='textRate3'>Eaten</span>
+                                        <span className='textRate'>567kcal</span>
+                                    </div>
+                                    <div className="circle-melsType-container">
+                                    <PiEyeClosedFill />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='melsType'>
+                            <p className="activity" style={{ color: '#121A2D' }}>Dinner</p>
+                            <div className='melsTypeContainer'>
+                                <div className='melsTypeInfo'>
+                                    <div className="melsType-details">
+                                    <span className='textRate3'>Recommended</span>
+                                        <span className='textRate' >300 kcal</span>
+                                    </div>
+                                    <div className="circle-melsType-container" style={{ background: '#FEAD54', color: '#FFFFFF' }}>
+                                    <i className="bx bx-plus-medical"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="foods_box"><p>Healthy dishes</p>
+                    <FoodTabs></FoodTabs>
+                    </div>
 
-                </div>
+                    <div className="food-card-container">
+                {foodCards.map(card => (
+                    <FoodCard
+                        key={card.id}
+                        name={card.name}
+                        image={card.image}
+                        contant={card.contant}
+                    />
+                ))}
+            </div>
+               <div className='food-card-content'>
+               <img src="img/image5.png"  alt="Picture5" className="picture5"/>
+               <img src="img/image6.png"  alt="Picture5" className="picture5"/>
+               <img src="img/image7.png"  alt="Picture5" className="picture5"/>
+               <span className='textorder'>order food</span>
+               <div className="circle-melsType-container" style={{ background: '#FEAD54', color: '#FFFFFF' }}>
+                    <GoArrowRight />
+                 </div>
+                </div>     
+            </div>
             </section>
         </div>
     )
