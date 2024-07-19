@@ -1,6 +1,6 @@
 import React from 'react';
 import { XYPlot, LineSeries, XAxis, YAxis, VerticalGridLines, HorizontalGridLines } from 'react-vis';
-import 'react-vis/dist/style.css'; // Make sure to import the correct style file for react-vis
+import 'react-vis/dist/style.css'; 
 import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css';
 import '../style.css';
@@ -31,10 +31,9 @@ const CalendarHeatmapComponent = () => {
     { x: 14, y: 9 },
   ];
 
-  // Filter data for one specific month (e.g., January)
   const filteredData = data.filter(point => {
-    const date = new Date(`2023-01-${point.x}`); // Adjust the date format based on your data
-    return date.getMonth() === 0; // Month is zero-indexed (0 = January)
+    const date = new Date(`2023-01-${point.x}`);
+    return date.getMonth() === 0; 
   });
 
   return (
