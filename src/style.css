@@ -192,7 +192,7 @@ body {
 	height: 107px;
 	border-radius: 50%;
 	overflow: hidden;
-	border: 5px solid var(--light); /* Border to blend with the box */
+	border: 5px solid var(--light); 
 	background: var(--light);
 }
 
@@ -280,7 +280,7 @@ body {
 }
 
 .tab-button:hover {
-	background-color: #0056b3; /* Darker shade for hover effect */
+	background-color: #0056b3; 
 }
 
 /* PROGRESS SECTION */
@@ -309,7 +309,7 @@ body {
 	left: 152px;
 	width: 325px;
 	z-index: 2000;
-	height: 350px;
+	
 }
 
 .progress-box {
@@ -318,7 +318,7 @@ body {
 	border-radius: 15px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	position: relative;
-	height: 250px;
+	height: 350px;
 }
 .progress-content {
 	position: absolute;
