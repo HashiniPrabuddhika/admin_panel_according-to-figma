@@ -675,8 +675,6 @@ body {
 	margin-left: -60px;
 }
 
-
-/* MAIN */
 /* CONTENT */
 
 
@@ -691,7 +689,9 @@ body {
 	#sidebar {
 		width: 80px;
 	}
-
+	#sidebar.hide {
+        width: 60px;
+    }
 	#content {
 		width: calc(100% - 60px);
 		left: 300px;
@@ -702,54 +702,120 @@ body {
 	#content nav .nav-link {
 		display: none;
 	}
+	#profile {
+        left: 10px;
+        width: calc(100% - 20px);
+    }
+	#tab-bar {
+        flex-direction: column;
+        top: 290px;
+        left: 10px;
+    }
+
+    .tab-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #progress {
+        flex-direction: column;
+        gap: 0;
+        top: 500px;
+        left: 10px;
+    }
+
+    #my-progress {
+        width: calc(100% - 20px);
+        top: 550px;
+    }
+	.profile-container {
+        padding: 5px;
+		width: 200px;
+		left: 80px;
+    }
+	.profile-pic-container {
+        width: 80px;
+        height: 80px;
+    }
+	.profile-name {
+        font-size: 12px;
+    }
+	.profile-role {
+        font-size: 9px;
+    }
+	.profile-info td {
+        font-size: 8px;
+    }
+	.profile-info .value {
+        font-size: 9px;
+    }
+	.profile-info .unit {
+        font-size: 5px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    #sidebar {
+        width: 60px;
+    }
+
+    #profile {
+        left: 0;
+        width: 100%;
+    }
+
+    #tab-bar {
+        flex-direction: column;
+        top: 240px;
+        left: 0;
+        gap: 10px;
+    }
+
+    .tab-button {
+        width: 100%;
+    }
+
+    #progress {
+        top: 400px;
+        left: 0;
+    }
+
+    #my-progress {
+        width: 100%;
+        top: 450px;
+    }
+
+	.profile-container {
+        padding: 2px;
+		width: 150px;
+    }
+
+    .profile-pic-container {
+        width: 60px;
+        height: 60px;
+    }
+
+    .profile-name {
+        font-size: 8px;
+    }
+
+    .profile-role {
+        font-size: 6px;
+    }
+
+    .profile-info td {
+        font-size: 4px;
+    }
+
+    .profile-info .value {
+        font-size: 7px;
+    }
+
+    .profile-info .unit {
+        font-size: 4px;
+    }
 }
 
 
 
-
-
-
-@media screen and (max-width: 576px) {
-	#content nav form .form-input input {
-		display: none;
-	}
-
-	#content nav form .form-input button {
-		width: auto;
-		height: auto;
-		background: transparent;
-		border-radius: none;
-		color: var(--dark);
-	}
-
-	#content nav form.show .form-input input {
-		display: block;
-		width: 100%;
-	}
-	#content nav form.show .form-input button {
-		width: 36px;
-		height: 100%;
-		border-radius: 0 36px 36px 0;
-		color: var(--light);
-		background: var(--red);
-	}
-
-	#content nav form.show ~ .notification,
-	#content nav form.show ~ .profile {
-		display: none;
-	}
-
-	#content main .box-info {
-		grid-template-columns: 1fr;
-	}
-
-	#content main .table-data .head {
-		min-width: 420px;
-	}
-	#content main .table-data .order table {
-		min-width: 420px;
-	}
-	#content main .table-data .todo .todo-list {
-		min-width: 420px;
-	}
-}
