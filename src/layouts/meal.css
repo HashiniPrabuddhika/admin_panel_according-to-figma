@@ -35,30 +35,28 @@
     color: var(--dark-grey);
 }
 
-.rank-container {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .line {
-    width: 100%;
-    height: 4px;
-    background-color: #ddd;
-    position: absolute;
-  }
-  
-  .rank {
-    position: absolute;
-    top: -10px; /* Adjust this to position the rank label */
-    transform: translateX(-50%);
-    background-color: #089BAB;
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 14px;
-  }
+.progress-line-container {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  margin-top: 10px;
+}
+
+.progress-line {
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-filled {
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+.profile-info th,
+.profile-info td {
+  vertical-align: top;
+}
