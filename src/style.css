@@ -264,13 +264,13 @@ body {
 }
 
 .tab-button.active {
-	background-color: lightblue; 
-	color:var(--blue); 
+	background-color: var(--blue); 
+	color:var(--light-blue); 
 }
 
 .tab-button:not(.active) {
-	background-color:  var(--blue); 
-	color:var(--light-yellow); 
+	background-color:  lightblue; 
+	color:var(--blue); 
 }
 
 .tab-button:hover {

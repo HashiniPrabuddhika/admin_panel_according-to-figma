@@ -1,212 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react';
 import 'boxicons/css/boxicons.min.css';
 import '../style.css';
-import CalendarHeatmapComponent from '../layouts/CalendarHeatmap';
+
 import Sidebar from '../layouts/Sidebar';
-const tracker = () => {
+import Profile from '../layouts/profile';
+import Excercises from '../layouts/excercises';
+import Meals from '../layouts/meal'; // Ensure this is the correct path
+
+const Tracker = () => {
+  const [activeTab, setActiveTab] = useState('meals');
+
+  const handleTabClick = (tab) => {
+    console.log(`Switching to ${tab} tab`); // Debugging statement
+    setActiveTab(tab);
+  };
+
   return (
     <div>
-          <Sidebar></Sidebar>
+      <Sidebar />
+      <Profile />
 
-            <div id="profile">
-                <div className="profile-container">
-                    <div className="profile-pic-container">
-                        <img src="img/people.png" alt="Profile Picture" className="profile-pic" />
-                    </div>
-                    <div className="profile-name">Bess Willis</div>
-                    <p className="profile-role">24 years, California</p>
-                    <div className="profile-info">
-                        <table>
-                            <tr>
-                                <td className="word">Weight</td>
-                                <td className="word">Height</td>
-                                <td className="word">Goal</td>
-                            </tr>
-                            <tr>
-                                <td className="value">70<span className="unit">kg</span></td>
-                                <td className="value">175<span className="unit">cm</span></td>
-                                <td className="value special">65<span className="unit special-unit">kg</span></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
+      <section id="tab-bar">
+        <button
+          className={`tab-button ${activeTab === 'meals' ? 'active' : ''}`}
+          onClick={() => handleTabClick('meals')}
+        >
+          Meals
+        </button>
+        <button
+          className={`tab-button ${activeTab === 'exercise' ? 'active' : ''}`}
+          onClick={() => handleTabClick('exercise')}
+        >
+          Exercise
+        </button>
+      </section>
 
-            <section id="tab-bar">
-                <button className="tab-button active" id="meals-btn">Meals</button>
-                <button className="tab-button" id="exercise-btn">Exercise</button>
-            </section>
+      {activeTab === 'meals' && <Meals />}
+      {activeTab === 'exercise' && <Excercises />}
 
-            <section id="progress">
+      <section id="progress">
                 <p className="progress">Progress</p>
                 <p className="date">26 Aug 2019</p>
             </section>
+    </div>
+  );
+};
 
-            <div id="my-progress" className="progress-box">
-                <div className="progress-content">
-                    <div className="progress-item">
-                        <p className="text1">Walked 🐾</p>
-                        <p className="text2">4532 steps</p>
-                    </div>
-                </div>
-                <div className="progress-content2">
-                    <div className="progress-item">
-                        <p className="text1">My Goal🎗</p>
-                        <p className="text2">6500 steps</p>
-                    </div>
-                </div>
-                <div className="circle-progress-container">
-                    <div className="circle-progress">
-                        <div className="circle-inner">
-                            <span className="circle-number">4532</span>
-                            <div className="circle-text">left</div>
-                        </div>
-                    </div>
-                </div>
-                <div className="divider"></div>
-                <div className="progress-content3">
-                    <div className="progress-item">
-                        <p className="text1">Burned🔥</p>
-                        <p className="text2">325 kcal</p>
-                    </div>
-                </div>
-                <div className="progress-content4">
-                    <div className="progress-item">
-                        <p className="text1">My Goal🏆</p>
-                        <p className="text2">800 kcal</p>
-                    </div>
-                </div>
-                <div className="circle-progress-container2">
-                    <div className="circle-progress2">
-                        <div className="circle-inner">
-                            <span className="circle-number">4532</span>
-                            <div className="circle-text">left</div>
-                        </div>
-                    </div>
-                </div>
-                <div><a href="#" className="edit-goals">Edit Goals</a></div>
-            </div>
-
-            <section id="content">
-                <div className="main-container">
-                    <div className="notification">Advice! Connect your Apple Watch for better results.
-                        <div className="circle-notification-container">
-                            <div className="circle-notification">🤖</div>
-                        </div>
-                    </div>
-                    <div className="Popular_Training"><p>Popular Training</p></div>
-                    <div className="training-container">
-                        <div className="training-item">
-                            <div className="circle-text-container">
-                                <div className="circle-notification">🦍</div>
-                            </div>
-                            <span className="texts">Power Training</span>
-                            <span className="texts2">395 kcal / h</span>
-                        </div>
-                        <div className="training-item">
-                            <div className="circle-text-container">
-                                <div className="circle-notification">🐍</div>
-                            </div>
-                            <span className="texts">Yoga Training</span>
-                            <span className="texts2">395 kcal / h</span>
-                        </div>
-                        <div className="training-item">
-                            <div className="circle-text-container">
-                                <div className="circle-notification">🐌</div>
-                            </div>
-                            <span className="texts">Stretching</span>
-                            <span className="texts2">395 kcal / h</span>
-                        </div>
-                    </div>
-                    <div className="training-container">
-                        <div className="Activity_Statistic">
-                            <p className="activity">Activity Statistic</p>
-                            <CalendarHeatmapComponent />
-                        </div>
-                        <div className="myTraining">
-                            <div className="myTraining-header">
-                                <p className="activity">My Training</p>
-                                <div className="circle-training-container">
-                                    <i className="bx bx-plus-medical"></i>
-                                </div>
-                            </div>
-                            <div className="table-container">
-                                <div className="table-row">
-                                    <div className="table-cell light-gray">Training</div>
-                                    <div className="table-cell black-text">TRX Cardio</div>
-                                </div>
-                                <div className="table-row">
-                                    <div className="table-cell light-gray">Burned</div>
-                                    <div className="table-cell black-text">350 kcal</div>
-                                </div>
-                                <div className="table-row">
-                                    <div className="table-cell light-gray">Spend</div>
-                                    <div className="table-cell black-text">1h 45m</div>
-                                </div>
-
-                                <div className='table2'>
-                                    <div className="table-row">
-                                        <div className="table-cell light-gray">Training</div>
-                                        <div className="table-cell black-text">Stretching</div>
-                                    </div>
-                                    <div className="table-row">
-                                        <div className="table-cell light-gray">Burned</div>
-                                        <div className="table-cell black-text">180 kcal</div>
-                                    </div>
-                                    <div className="table-row">
-                                        <div className="table-cell light-gray">Spend</div>
-                                        <div className="table-cell black-text">30 m</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div className='heartRateRow'>
-                        <div className='heartRate'>
-                            <p className="activity">Heart Rate</p>
-                            <div className='heartRateContainer'>
-                                <div className='heartRateInfo'>
-                                    <div className="rate-details">
-                                        <span className='textRate'>💓 75 bpm</span>
-                                        <span className='textRate2'>Health zone</span>
-                                    </div>
-                                    <div className="circle-heartRate-container">
-                                        <i className="bx bxs-doughnut-chart"></i>
-                                    </div>
-                                    <p className="heart-text">Additional Info</p>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div className='heartRate'>
-                            <p className="activity">Water Balance</p>
-                            <div className='heartRateContainer'>
-                                <div className='heartRateInfo'>
-                                    <div className="rate-details">
-                                        <span className='textRate2'>🐳 <span className="light-gray">Drunk</span></span>
-                                        <span className='textRate'>1250 ml<span className="light-gray">/2000 ml</span></span>
-                                    </div>
-                                    <div className="circle-heartRate-container">
-                                        <i className="bx bx-plus-medical"></i>
-                                    </div>
-                                    <p className="heart-text">Add Water</p>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                </div>
-            </section>
-        </div>
-  )
-}
-
-export default tracker
+export default Tracker;
